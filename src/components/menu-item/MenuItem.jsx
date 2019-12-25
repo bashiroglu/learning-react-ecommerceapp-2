@@ -1,13 +1,16 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
 import './menu-item.scss';
 
-const MenuItem = ({ title, imageUrl, size }) => (
-  <div className={`${size} menu-item`}>
+const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
+  <div
+    className={`${size} menu-item`}
+    /* we use link url from our state data to go relative page */
+    /* match url enable us to go there from we we are */
+    onClick={() => history.push(`${match.url}${linkUrl}`)}
+  >
     <div
-      /* css comment we have to do like this because
-       if we give this background of main div, when we hover styles
-       will be implemented to all content */
       className="background-image"
       style={{
         backgroundImage: `url(${imageUrl})`
@@ -19,5 +22,5 @@ const MenuItem = ({ title, imageUrl, size }) => (
     </div>
   </div>
 );
-
-export default MenuItem;
+/* with withRouter we escape propdrilling otherwise we have to send via prop to this menuitem comp */
+export default withRouter(MenuItem);
