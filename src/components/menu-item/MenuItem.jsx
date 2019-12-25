@@ -6,8 +6,6 @@ import './menu-item.scss';
 const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
   <div
     className={`${size} menu-item`}
-    /* we use link url from our state data to go relative page */
-    /* match url enable us to go there from we we are */
     onClick={() => history.push(`${match.url}${linkUrl}`)}
   >
     <div
@@ -22,5 +20,4 @@ const MenuItem = ({ title, imageUrl, size, history, linkUrl, match }) => (
     </div>
   </div>
 );
-/* with withRouter we escape propdrilling otherwise we have to send via prop to this menuitem comp */
 export default withRouter(MenuItem);

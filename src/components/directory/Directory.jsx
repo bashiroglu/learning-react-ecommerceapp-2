@@ -49,7 +49,6 @@ class Directory extends React.Component {
   render() {
     return (
       <div className="directory-menu">
-          {/* because we don't need other props here we use rest speread operator and send rest params in otherSectionProps */}
         {this.state.sections.map(({ id, ...otherSectionProps }) => (
           <MenuItem key={id} {...otherSectionProps} />
         ))}

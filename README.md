@@ -1,4 +1,4 @@
-This is learning based project which I practise some React features. The idea of this project was taken from Andrei Neagoie and Yihua Zhang's  Udemy course called [ Complete React Developer in 2020 (Redux, Hooks, GraphQL)](https://www.udemy.com/course/complete-react-developer-zero-to-mastery/) and followed along with videos and hopefully added some extra feature.
+This is learning based project which I practise some React features. The idea of this project was taken from Andrei Neagoie and Yihua Zhang's  Udemy course called [ Complete React Developer in 2020 (Redux, Hooks, GraphQL)](https://www.udemy.com/course/complete-react-developer-zero-to-mastery/) and followed along with videos and hopefully added some extra features.
 
 The name of project: learning-react-ecommerceapp-2
 

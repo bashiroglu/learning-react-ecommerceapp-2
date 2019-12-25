@@ -7,7 +7,6 @@
   justify-content: center;
   border: 1px solid black;
   margin: 0 7.5px 15px;
-  /* overflow hidden prevent overflow of hidden from menuitem */
   overflow: hidden;
 
   &:hover {
@@ -36,8 +35,6 @@
   }
 
   .background-image {
-    /* I had problem displaying the photo, it was because if
-     div don't have content, width and height it don't display anything */
     width: 100%;
     height: 100%;
     background-size: cover;
