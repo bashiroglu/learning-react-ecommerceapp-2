@@ -1,7 +1,6 @@
 $sub-color: grey;
 $main-color: black;
 
-/* shirink sass mixin  */
 @mixin shrinkLabel {
   top: -14px;
   font-size: 12px;
@@ -30,7 +29,6 @@ $main-color: black;
     }
 
     &:focus ~ .form-input-label {
-      /* why input will be on focus shrinkLabel f works */
       @include shrinkLabel();
     }
   }

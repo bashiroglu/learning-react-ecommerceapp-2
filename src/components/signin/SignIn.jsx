@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import FormInput from '../custominput/CustomInput';
 import CustomButton from '../custombutton/CustomButton';
 
+import { signInWithGoogle } from '../../firebase/firebase.utils';
+
 import './signin.scss';
 
 class SignIn extends Component {
@@ -16,15 +18,13 @@ class SignIn extends Component {
   }
 
   handleSubmit = e => {
-    e.preDefault();
+    e.preventDefault();
     this.setState({ email: '', password: '' });
   };
 
   handleChange = e => {
-    /* simple destructuring */
     const { value, name } = e.target;
-    /* syntax to take to attribute or prop from 1 comp */
-    /* by this we don't use unnecessary 2 function */
+
     this.setState({ [name]: value });
   };
 
@@ -38,8 +38,6 @@ class SignIn extends Component {
             name="email"
             type="email"
             value={this.state.email}
-            /* in here we just send func of handle change to child comp,
-            but when action happen if refer here and the f works */
             handleChange={this.handleChange}
             label="email"
             required
@@ -53,6 +51,9 @@ class SignIn extends Component {
             required
           />
           <CustomButton type="submit"> Sign in </CustomButton>
+          <CustomButton onClick={signInWithGoogle}>
+            Sign in with google
+          </CustomButton>
         </form>
       </div>
     );

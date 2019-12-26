@@ -10,7 +10,7 @@ import { Switch, Route } from 'react-router-dom';
 function App() {
   return (
     <div className="App">
-      {/* outside of switch withour any path means render in every page */}
+      
       <Header />
       <Switch>
         <Route exact path="/" component={HomePage} />
