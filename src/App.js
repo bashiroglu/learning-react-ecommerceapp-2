@@ -20,11 +20,24 @@ class App extends Component {
   unsubscribeFromAuth = null;
 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(userAuth => {
-      /* this is the user object which onAuthStateChanged function give us*/
-      createUserProfileDocument(userAuth);
-
-      console.log(userAuth);
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
+      if (userAuth) {
+        const userRef = await createUserProfileDocument(userAuth);
+        /* onSnapshot is kinda onAuthStateChanged we use to know if shapshot changed */
+        userRef.onSnapshot(snapshot => {
+          /* snapshot doesn't contain our data, only id */
+          this.setState(
+            {
+              currentUser: {
+                id: snapshot.id,
+                /* we use data() method to get data */
+                ...snapshot.data()
+              }
+            },
+            () => console.log(this.state)
+          );
+        });
+      }
     });
   }
 
