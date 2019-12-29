@@ -30,8 +30,9 @@ const Header = ({ currentUser }) => (
     </div>
   </div>
 );
+/*  mapStateToProps function is to get state and give it to comp via props */
 const mapStateToProps = state => ({
   currentUser: state.user.currentUser
 });
-
+/* we use connect HOF  to have this funct */
 export default connect(mapStateToProps)(Header);

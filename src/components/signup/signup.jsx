@@ -30,14 +30,12 @@ class SignUp extends Component {
     }
 
     try {
-      /* createUserWithEmailAndPassword is built in method in auth */
       const { user } = await auth.createUserWithEmailAndPassword(
         email,
         password
       );
-      /* createUserProfileDocument is ou own function to create user in our db */
+
       await createUserProfileDocument(user, { displayName });
-/* this setstate only clean our form  */
       this.setState({
         displayName: '',
         email: '',

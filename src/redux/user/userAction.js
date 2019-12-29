@@ -4,3 +4,4 @@ export const setCurrentUser = user => {
     payload: user
   };
 };
+/* setCurrentUser in general action function take param and do something return handable object for reducer func */

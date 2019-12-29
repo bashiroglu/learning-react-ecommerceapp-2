@@ -50,8 +50,10 @@ class App extends Component {
     );
   }
 }
+/*  first setCurrentUser is prop to give data to comp */
+/* second one is our action function get user as a parametr  */
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
-
+/* the same we giv connect HOF but as a secend parametr */
 export default connect(null, mapDispatchToProps)(App);

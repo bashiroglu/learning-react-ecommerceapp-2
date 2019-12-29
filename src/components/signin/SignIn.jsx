@@ -7,7 +7,6 @@ import { auth, signInWithGoogle } from '../../firebase/firebase.utils';
 
 import './signin.scss';
 
-
 class SignIn extends Component {
   constructor(props) {
     super(props);
@@ -23,9 +22,8 @@ class SignIn extends Component {
 
     const { email, password } = this.state;
     try {
-      /* signInWithEmailAndPassword we use this method from auth to sign in, it handle rest */
       await auth.signInWithEmailAndPassword(email, password);
-      /* this is to clean our imputs */
+
       this.setState({ email: '', password: '' });
     } catch (error) {
       console.log(error);
