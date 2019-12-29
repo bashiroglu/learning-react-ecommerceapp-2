@@ -43,5 +43,4 @@ const mapStateToProps = createStructuredSelector({
   hidden: selectCartHidden
 });
 
-/* we use connect HOF  to have this funct */
 export default connect(mapStateToProps)(Header);

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createStructuredSelector } from 'reselect'; /* this is for wehen we use many 
-reselcts and pass the state all, by using this we do it automatically */
+import { createStructuredSelector } from 'reselect';
 
 import HomePage from './pages/homepage/HomePage';
 import ShopPage from './pages/shoppage/ShopPage';
@@ -53,11 +52,7 @@ class App extends Component {
           <Route
             path="/signin"
             render={() =>
-              currentUser ? (
-                /* Redirect take to param and Redirect when we access that route */ <Redirect to="/" />
-              ) : (
-                <SignInAndSignUpPage />
-              )
+              currentUser ? <Redirect to="/" /> : <SignInAndSignUpPage />
             }
           />
         </Switch>
@@ -66,16 +61,12 @@ class App extends Component {
   }
 }
 
-/* const mapStateToProps = state => ({
-  currentUser: state.user.currentUser
-}); as you see we didn't pass state in below1 */
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
 });
-/*  first setCurrentUser is prop to give data to comp */
-/* second one is our action function get user as a parametr  */
+
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
-/* the same we giv connect HOF but as a secend parametr */
+
 export default connect(mapStateToProps, mapDispatchToProps)(App);

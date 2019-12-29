@@ -5,11 +5,13 @@ import './custombutton.scss';
 const CustomButton = ({
   children,
   isGoogleSignIn,
-  inverted,/* we use this for styling purposes */
+  inverted,
   ...otherProps
 }) => (
   <button
-    className={`${inverted ? 'inverted' : ''} ${isGoogleSignIn ? 'google-sign-in' : ''} custom-button`}
+    className={`${inverted ? 'inverted' : ''} ${
+      isGoogleSignIn ? 'google-sign-in' : ''
+    } custom-button`}
     {...otherProps}
   >
     {children}

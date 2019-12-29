@@ -11,7 +11,6 @@ import App from './App';
 import './index.css';
 
 ReactDOM.render(
-  /* we wrap our whole app with provider hof and give it prop of our store file */
   <Provider store={store}>
     <BrowserRouter>
       <App />

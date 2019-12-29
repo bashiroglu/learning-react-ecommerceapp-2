@@ -24,11 +24,8 @@ const CartDropdown = ({ cartItems, history, dispatch }) => (
     </div>
     <CustomButton
       onClick={() => {
-        history.push(
-          '/checkout'
-        ); /*  we go checkout page by using history from withrouter HOF */
+        history.push('/checkout');
         dispatch(toggleCartHidden());
-        /* we trigger dispach here, this is the shortway of dispatch function  */
       }}
     >
       GO TO CHECKOUT

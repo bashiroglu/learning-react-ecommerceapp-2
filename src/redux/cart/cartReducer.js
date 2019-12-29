@@ -20,10 +20,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         cartItems: state.cartItems.filter(
-          cartItem =>
-            cartItem.id !==
-            action.payload
-              .id /* when is equal, it does return true and item stay, when false item went */
+          cartItem => cartItem.id !== action.payload.id
         )
       };
     case CartActionTypes.REMOVE_ITEM:
