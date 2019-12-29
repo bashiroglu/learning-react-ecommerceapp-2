@@ -7,7 +7,7 @@ Used Language concepts:
 1. node-sass (to style components)
 2. react-router-dom (to manage routes)
 3. firebase (to store data(from users to products))
-4. 
+4. redux react-redux(to manage state in react) redux-logger(middleware to log state) 
 
 
 After download project files, in the project directory, you can run :
