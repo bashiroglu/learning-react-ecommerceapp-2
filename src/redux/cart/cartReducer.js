@@ -1,5 +1,5 @@
 import { CartActionTypes } from './CartActionTypes';
-import { addItemToCart } from './cartUtils';
+import { addItemToCart, removeItemFromCart } from './cartUtils';
 
 const INITIAL_STATE = {
   hidden: true,
@@ -12,10 +12,10 @@ const cartReducer = (state = INITIAL_STATE, action) => {
       return { ...state, hidden: !state.hidden };
     case CartActionTypes.ADD_ITEM:
       return {
-        /* we use the same method to update state */
         ...state,
         cartItems: addItemToCart(state.cartItems, action.payload)
       };
+
     case CartActionTypes.CLEAR_ITEM_FROM_CART:
       return {
         ...state,
@@ -25,6 +25,11 @@ const cartReducer = (state = INITIAL_STATE, action) => {
             action.payload
               .id /* when is equal, it does return true and item stay, when false item went */
         )
+      };
+    case CartActionTypes.REMOVE_ITEM:
+      return {
+        ...state,
+        cartItems: removeItemFromCart(state.cartItems, action.payload)
       };
 
     default:
