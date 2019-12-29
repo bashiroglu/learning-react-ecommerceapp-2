@@ -7,7 +7,7 @@ import Header from './components/header/Header';
 import SignInAndSignUpPage from './pages/signinandsignup/SignInAndSignUpPage';
 
 import './App.css';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/userAction';
 
@@ -38,22 +38,36 @@ class App extends Component {
   }
 
   render() {
+    const { currentUser } = this.props;
     return (
       <div>
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route path="/shop" component={ShopPage} />
-          <Route path="/signin" component={SignInAndSignUpPage} />
+          <Route
+            path="/signin"
+            render={() =>
+              currentUser ? (
+                /* Redirect take to param and Redirect when we access that route */ <Redirect to="/" />
+              ) : (
+                <SignInAndSignUpPage />
+              )
+            }
+          />
         </Switch>
       </div>
     );
   }
 }
+
+const mapStateToProps = state => ({
+  currentUser: state.user.currentUser
+});
 /*  first setCurrentUser is prop to give data to comp */
 /* second one is our action function get user as a parametr  */
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 /* the same we giv connect HOF but as a secend parametr */
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
