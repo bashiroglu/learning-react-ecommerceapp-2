@@ -4,12 +4,12 @@ The name of project: learning-react-ecommerceapp-2
 
 Used Language concepts:
 
-1. node-sass (to style components)
+1. node-sass (to style components with sass)
 2. react-router-dom (to manage routes)
 3. firebase (to store data(from users to products))
 4. redux react-redux(to manage state in react) redux-logger(middleware to log state) 
-5. reselect for memoization
-6. 
+5. reselect (for memoization)
+6. redux-persist(to save our data to Local Storage)
 
 
 After download project files, in the project directory, you can run :
