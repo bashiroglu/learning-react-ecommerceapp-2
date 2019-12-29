@@ -8,6 +8,8 @@ Used Language concepts:
 2. react-router-dom (to manage routes)
 3. firebase (to store data(from users to products))
 4. redux react-redux(to manage state in react) redux-logger(middleware to log state) 
+5. reselect for memoization
+6. 
 
 
 After download project files, in the project directory, you can run :
