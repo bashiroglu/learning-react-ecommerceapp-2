@@ -1,25 +1,28 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { clearItemFromCart } from '../../redux/cart/cartActions';
 
 import './checkout-item.scss';
 
-const CheckoutItem = ({
-  /* we do like this because we need 
-  cartitem it self to remove increase count etc */ cartItem: {
-    name,
-    imageUrl,
-    price,
-    quantity
-  }
-}) => (
-  <div className="checkout-item">
-    <div className="image-container">
-      <img src={imageUrl} alt="item" />
+const CheckoutItem = ({ cartItem, clearItem }) => {
+  const { name, imageUrl, price, quantity } = cartItem;
+  return (
+    <div className="checkout-item">
+      <div className="image-container">
+        <img src={imageUrl} alt="item" />
+      </div>
+      <span className="name">{name}</span>
+      <span className="quantity">{quantity}</span>
+      <span className="price">{price}</span>
+      <div className="remove-button" onClick={() => clearItem(cartItem)}>
+        &#10005;
+      </div>
     </div>
-    <span className="name">{name}</span>
-    <span className="quantity">{quantity}</span>
-    <span className="price">{price}</span>
-    <div className="remove-button">&#10005;{/* this is the x utf code */}</div>
-  </div>
-);
+  );
+};
+const mapDispatchToProps = dispatch => ({
+  clearItem: item => dispatch(clearItemFromCart(item))
+});
 
-export default CheckoutItem;
+export default connect(null, mapDispatchToProps)(CheckoutItem);
