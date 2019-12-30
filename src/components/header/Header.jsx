@@ -14,11 +14,8 @@ import {
   HeaderContainer,
   LogoContainer,
   OptionsContainer,
-  OptionLinkContainer,
-  OptionDivContainer
+  OptionLinkContainer
 } from './headerStyles';
-
-import './header.scss';
 
 const Header = ({ currentUser, hidden }) => (
   <HeaderContainer>
@@ -29,9 +26,14 @@ const Header = ({ currentUser, hidden }) => (
       <Link to="/shop">CONTACT</Link>
 
       {currentUser ? (
-        <OptionDivContainer onClick={() => auth.signOut()}>
+        <OptionLinkContainer
+          as="div"
+          /* as div, says to dispaly it as a div  */ onClick={() =>
+            auth.signOut()
+          }
+        >
           SIGN OUT
-        </OptionDivContainer>
+        </OptionLinkContainer>
       ) : (
         <OptionLinkContainer to="/signin">SIGN IN</OptionLinkContainer>
       )}
