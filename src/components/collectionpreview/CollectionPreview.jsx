@@ -8,7 +8,13 @@ const CollectionPreview = ({ title, items }) => {
       <h1 className="title">{title.toUpperCase()}</h1>
       <div className="preview">
         {items
-          .filter((item, idx) => idx < 4)
+          .filter(
+            (item, idx) => idx < 4
+          ) /* we can also write another 
+          select funtion to get only 4 
+          but we use this method
+          to give chance to collectionpreview 
+          to decide */
           .map(item => (
             <CollectionItem key={item.id} item={item} />
           ))}

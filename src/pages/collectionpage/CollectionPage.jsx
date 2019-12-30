@@ -21,7 +21,8 @@ const CollectionPage = ({ collection }) => {
   );
 };
 
-const mapStateToProps = (state, ownProps) => ({
+const mapStateToProps = (state, ownProps) => ({/* we send params.collectionId 
+  to selectCollection funct in shopSelectors page to , */
   collection: selectCollection(ownProps.match.params.collectionId)(state)
 });
 
