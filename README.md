@@ -10,7 +10,8 @@ Used Language concepts:
 4. redux react-redux(to manage state in react) redux-logger(middleware to log state)
 5. reselect (for memoization)
 6. redux-persist(to save our data to Local Storage)
-7.
+7. styled-components(to use css in js)
+8. 
 
 Addable features:
 
