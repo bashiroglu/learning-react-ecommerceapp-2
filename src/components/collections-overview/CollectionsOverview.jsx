@@ -1,4 +1,4 @@
-/* we needed this page because we needed to show overview before the preview */
+
 
 import React from 'react';
 import { connect } from 'react-redux';
