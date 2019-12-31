@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+
 import CustomButton from '../custombutton/CustomButton';
 import { addItem } from '../../redux/cart/cartActions';
 
@@ -21,7 +22,13 @@ const CollectionItem = ({ item, addItem }) => {
         <span className="name">{name}</span>
         <span className="price">{price}</span>
       </div>
-      <CustomButton onClick={() => addItem(item)} inverted>
+      <CustomButton
+        onClick={() => addItem(item)}
+        className="custom-button" /*  we cannot delete this or we need to add
+         this because this comes from collection item
+        scss file not from button's scss file */
+        inverted
+      >
         Add to cart
       </CustomButton>
     </div>

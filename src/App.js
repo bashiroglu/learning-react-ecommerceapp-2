@@ -1,7 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-
+/*  in these last commits I also faced problem with
+ being not case sensitive git deteching changes machine, 
+ we can basically avoid it by typing git config core.ignorecase false.
+ Or we can use othe way around to make our git not case sensitive
+ */
 import HomePage from './pages/homepage/HomePage';
 import ShopPage from './pages/shoppage/ShopPage';
 import Header from './components/header/Header';
