@@ -2,6 +2,9 @@ This is learning based project which I practise some React features. The idea of
 
 The name of project: learning-react-ecommerceapp-2
 
+The project is also live on https://e-commerce2.herokuapp.com
+You are welcome to have a look at it.
+
 Used Language concepts:
 
 1. node-sass (to style components with sass)
@@ -11,7 +14,7 @@ Used Language concepts:
 5. reselect (for memoization)
 6. redux-persist(to save our data to Local Storage)
 7. styled-components(to use css in js)
-8. 
+8.
 
 Addable features:
 
