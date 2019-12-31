@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { createStructuredSelector } from 'reselect';
 
-import HomePage from './pages/homepage/HomePage';
+import HomePage from './pages/homepage/Homepage';
 import ShopPage from './pages/shoppage/ShopPage';
 import Header from './components/header/Header';
 import SignInAndSignUpPage from './pages/signinandsignup/SignInAndSignUpPage';
