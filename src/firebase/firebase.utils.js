@@ -64,6 +64,9 @@ export const addCollectionAndDocuments = async (
 
 export const convertCollectionsSnapshotToMap = collections => {
   const transformedCollection = collections.docs.map(doc => {
+    /* we will give collections snapshop object to this, this will take 
+    it and obtain data by doc.data method then create new object in 
+    that object we also add routename by creating url from title of object and pass item to it */
     const { title, items } = doc.data();
 
     return {
@@ -73,7 +76,12 @@ export const convertCollectionsSnapshotToMap = collections => {
       items
     };
   });
-  console.log(transformedCollection);
+  /*  in here we use reduce to create object by giving it object as acc */
+  return transformedCollection.reduce((accumulator, collection) => {
+    accumulator[collection.title.toLowerCase()] = collection;
+    return accumulator; /*  we say take this empty object and make a key from 
+    title of element of arrays and assign that key the collection array */
+  }, {});
 };
 
 export default firebase;
