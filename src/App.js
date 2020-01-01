@@ -17,8 +17,7 @@ import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import {
   auth,
-  createUserProfileDocument,
-  addCollectionAndDocuments
+  createUserProfileDocument
 } from './firebase/firebase.utils';
 // import {
 //   auth,
@@ -43,7 +42,6 @@ class App extends Component {
             id: snapShot.id,
             ...snapShot.data()
           });
-          addCollectionAndDocuments();
         });
       } else {
         setCurrentUser(userAuth);
