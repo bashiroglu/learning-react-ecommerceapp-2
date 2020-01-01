@@ -28,7 +28,7 @@ const Header = ({ currentUser, hidden }) => (
       {currentUser ? (
         <OptionLinkContainer
           as="div"
-          /* as div, says to dispaly it as a div  */ onClick={() =>
+           onClick={() =>
             auth.signOut()
           }
         >

@@ -13,8 +13,6 @@ export const HeaderContainer = styled.div`
 `;
 
 export const LogoContainer = styled(Link)`
-  /* when we have to style special 
-component, we use this method coponent as a argument to styled function */
   height: 100%;
   width: 70px;
   padding: 25px;

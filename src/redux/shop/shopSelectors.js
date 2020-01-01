@@ -28,9 +28,6 @@ const COLLECTION_ID_MAP = {
 export const selectCollectionWithId = collectionUrlParam =>
   createSelector([selectCollections], collections =>
     collections.find(
-      /* before data normalization we used to obtain collection by using this method */
-      /* what we basically say, in collections item find the collection 
-      where its id equals to value of property of collectionUrlParam in COLLECTION_ID_MAP */
       collection => collection.id === COLLECTION_ID_MAP[collectionUrlParam]
     )
   );

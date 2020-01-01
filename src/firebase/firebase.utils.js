@@ -51,18 +51,29 @@ export const addCollectionAndDocuments = async (
   collectionKey,
   objectsToAdd
 ) => {
-  const collectionRef = firestore.collection(collectionKey);/* this create 
-  first ref or id */
+  const collectionRef = firestore.collection(collectionKey);
 
-  const batch = firestore.batch();/* this batch file help us to not saving any 
-  file in case of any proplem while saving *//* it comes from firestore  */
+  const batch = firestore.batch();
   objectsToAdd.forEach(obj => {
-    const newDocRef = collectionRef.doc();/* we create newDocRef for each
-     object and set our obj to that ref (or id) */
+    const newDocRef = collectionRef.doc();
     batch.set(newDocRef, obj);
   });
 
-  return await batch.commit(); /* this is async f. that is why we await */
+  return await batch.commit();
+};
+
+export const convertCollectionsSnapshotToMap = collections => {
+  const transformedCollection = collections.docs.map(doc => {
+    const { title, items } = doc.data();
+
+    return {
+      routeName: encodeURI(title.toLowerCase()),
+      id: doc.id,
+      title,
+      items
+    };
+  });
+  console.log(transformedCollection);
 };
 
 export default firebase;

@@ -36,7 +36,6 @@ const googleSignInStyles = css`
 
 const getButtonStyles = props => {
   if (props.isGoogleSignIn) {
-    /* we wite this function and use in our styles(below) */
     return googleSignInStyles;
   }
 
@@ -57,6 +56,5 @@ export const CustomButtonContainer = styled.button`
   cursor: pointer;
   display: flex;
   justify-content: center;
-  ${getButtonStyles} /* here we say when it is googlesigninbutton us 
-  its style or other proper styles by calling this function */
+  ${getButtonStyles}
 `;

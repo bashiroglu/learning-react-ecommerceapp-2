@@ -24,9 +24,7 @@ const CollectionItem = ({ item, addItem }) => {
       </div>
       <CustomButton
         onClick={() => addItem(item)}
-        className="custom-button" /*  we cannot delete this or we need to add
-         this because this comes from collection item
-        scss file not from button's scss file */
+        className="custom-button" 
         inverted
       >
         Add to cart
