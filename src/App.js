@@ -52,7 +52,7 @@ class App extends Component {
     // addCollectionAndDocuments(
     //   'collections',
     //   collectionsArray.map(({ title, items }) => ({ title, items }))
-    // );
+    // ); /* we just import and utilize proper function and reselector */
   }
 
   componentWillUnmount() {
