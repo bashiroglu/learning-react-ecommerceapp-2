@@ -11,10 +11,20 @@ import ShopPage from './pages/shoppage/ShopPage';
 import Header from './components/header/Header';
 import SignInAndSignUpPage from './pages/signinandsignup/SignInAndSignUpPage';
 import CheckoutPage from './pages/checkoutpage/CheckoutPage';
+// import { selectCollectionsForPreview } from './redux/shop/shopSelectors';
 
 import './App.css';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import { auth, createUserProfileDocument } from './firebase/firebase.utils';
+import {
+  auth,
+  createUserProfileDocument,
+  addCollectionAndDocuments
+} from './firebase/firebase.utils';
+// import {
+//   auth,
+//   createUserProfileDocument,
+//   addCollectionAndDocuments
+// } from './firebase/firebase.utils';
 import { setCurrentUser } from './redux/user/userAction';
 import { selectCurrentUser } from './redux/user/userSelectors';
 
@@ -33,11 +43,16 @@ class App extends Component {
             id: snapShot.id,
             ...snapShot.data()
           });
+          addCollectionAndDocuments();
         });
       } else {
         setCurrentUser(userAuth);
       }
     });
+    // addCollectionAndDocuments(
+    //   'collections',
+    //   collectionsArray.map(({ title, items }) => ({ title, items }))
+    // );
   }
 
   componentWillUnmount() {
@@ -67,6 +82,8 @@ class App extends Component {
 
 const mapStateToProps = createStructuredSelector({
   currentUser: selectCurrentUser
+  // ,
+  // collectionsArray: selectCollectionsForPreview
 });
 
 const mapDispatchToProps = dispatch => ({
